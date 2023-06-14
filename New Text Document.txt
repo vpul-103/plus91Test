@@ -1,0 +1,35 @@
+class Test
+{
+	public static int maxDiff(int[] arr, int N, int K)
+	{
+
+		Arrays.sort(arr);
+		int sum1=0, sum2=0, sum3=0;
+		
+		for(int i=0; i<K; i++) {
+			sum1 = sum1 + arr[i];
+			}
+		
+		for(int j=K; j<N; j++) {
+			sum2 = sum2 + arr[j];
+			}
+
+		for(int m=0; m<N; m++) {
+			sum3 = sum3 + arr[m];
+			}
+
+		int diff1 = sum3 - sum2;
+		int diff2 = sum3 - sum1;
+
+		return Math.max(diff1,diff2);
+
+
+	public static void main(String[] args)
+	{
+		int[] arr = {1,1,1,1,1,1,1,1};
+		int K = 3;
+		int N = arr.length;
+		int result = maxDiff(arr,N,K);
+		System.out.println(result);
+	}
+}
